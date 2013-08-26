@@ -35,16 +35,18 @@
 		<div class="well">
 			<h3>Blogroll</h3>
 			<ul>
-								<li><a href="http://getpelican.com/">Pelican</a></li>
+								<li><a href="http://www.google.com/">Google</a></li>
 								<li><a href="http://python.org/">Python.org</a></li>
-								<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-								<li><a href="#">You can modify those links in your config file</a></li>
+								<li><a href="https://developers.google.com/">GoogleDevelopers</a></li>
+								<li><a href="http://www.android.com/">Android</a></li>
 							</ul>
 			<div class="social">
 			<h3>Social</h3>
 			<ul>
-								<li><a href="#">You can add links in your config file</a></li>
-								<li><a href="#">Another social link</a></li>
+								<li><a href="https://plus.google.com/u/0/">G+</a></li>
+								<li><a href="http://weibo.com/u/2812201335">微博</a></li>
+								<li><a href="https://twitter.com/lls6145219">Twitter</a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=100004010032982">Facebook</a></li>
 							</ul>
 			</div>
 		</div>
@@ -80,7 +82,27 @@ scanf("%d",&n);
 hanoi(n, 'A', 'B', 'C');
 }
 
-int hanoi(int n, char ...</stdio.h></code></pre> <a class="btn primary xsmall" href="/hanoi-tower-c.html">more…</a>
+int hanoi(int n, char one, char two, char three)
+{
+int move(char x, char y); 
+
+if(n==1) ************** 1 
+{
+move(one,three); ************** 2
+}
+else ************** 3
+{
+hanoi(n-1, one, three, two); ************** 4
+move(one, three); ************** 5
+hanoi(n-1, two, one, three); ************** 6
+}
+
+return 0;
+}
+
+int move(char x, char y)
+{
+printf("%c-->%cn",x,y ...</stdio.h></code></pre> <a class="btn primary xsmall" href="/hanoi-tower-c.html">more…</a>
 	</div>
 </div>	
 
