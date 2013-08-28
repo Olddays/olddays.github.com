@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>LuizLiu'sBlog</title>
+	<meta name="description" content="">
+	<meta name="author" content="LuizLiu">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+		</head>
+<body>
+			<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/index.html">LuizLiu'sBlog</a>
+			<ul class="nav">
+																										<li class="active"><a href="/category/Android.html">Android</a></li>
+									<li ><a href="/category/algorithm.html">algorithm</a></li>
+							</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">	
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+								<li><a href="http://www.google.com/">Google</a></li>
+								<li><a href="http://python.org/">Python.org</a></li>
+								<li><a href="https://developers.google.com/">GoogleDevelopers</a></li>
+								<li><a href="http://www.android.com/">Android</a></li>
+							</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+								<li><a href="https://plus.google.com/102208287383540096533/posts">Google+</a></li>
+								<li><a href="http://weibo.com/u/2812201335">微博</a></li>
+								<li><a href="https://twitter.com/lls6145219">Twitter</a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=100004010032982">Facebook</a></li>
+							</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+							<div class='article'>
+		<div class="page-header"><h1>Android系统架构</h1></div>
+		<div class="well small">Permalink: <a class="more" href="/androidxi-tong-jia-gou.html">2013-08-28 00:00:00</a>
+by <a class="url fn" href="/author/LuizLiu.html">LuizLiu</a>in <a href="/category/Android.html">Android</a>
+tags: <a href="/tag/Android.html">Android</a> </div>
+		<div><div class="highlight"><pre>    <span class="n">Android</span><span class="err">系统架构总体可分为四层结构，分别是应用程序层、应用程序框架层、系统运行库层以及</span><span class="n">Linux</span><span class="err">内核层。如下图所示：</span>
+</pre></div>
+
+
+<p><img alt="Alt text" src="/home/liu/myblog/content/QQ20120516151406.png" /></p>
+<p>图1  Android系统架构图</p>
+<h4>一、应用程序层</h4>
+<div class="highlight"><pre>    <span class="n">Android</span><span class="err">平台不仅仅是操作系统，也包含了许多应用程序，诸如</span><span class="n">SMS</span><span class="err">短信客户端程序、电话拨号程序、图片浏览器、</span><span class="n">Web</span><span class="err">浏览器等应用程序。这些应用程序都是用</span><span class="n">Java</span><span class="err">语言编写，并且都是可以被开发人员所开发的其他应用程序替换，这点不同于其他手机操作系统固化在系统内部的系统软件，更加灵活和个性化。</span>
+</pre></div>
+
+
+<p>用户开发的Android应用程序和Android的核心应用程序是同一层次的，它们都是基于Android的系统API构建的。</p>
+<h4>二、应用程序框架层</h4>
+<div class="highlight"><pre>    <span class="err">应用程序框架层是开发者从事</span><span class="n">Android</span><span class="err">应用开发的基础，很多核心应用程序也是通过这一层来实现其核心功能，该层简化了组件的重用，开发人员可以直接使用它提供的组件进行快速的应用程序开发，也可以通过继承而实现个性化的拓展。</span>
+</pre></div>
+
+
+<p>一下是这次层中，各个部分的功能：</p>
+<div class="highlight"><pre>    <span class="n">Activity</span> <span class="n">Manager</span><span class="err">（活动管理器）：管理各个应用程序生命周期以及通常的导航回退功能</span>
+    <span class="n">Window</span> <span class="n">Manager</span><span class="err">（窗口管理器）：管理所有的窗口程序</span>
+    <span class="n">Content</span> <span class="n">Provider</span><span class="err">（内容提供器）：通过它可以在不同应用程序之间存取或者分享数据</span>
+    <span class="n">View</span> <span class="n">System</span><span class="err">（视图系统）：构建应用程序的基本组件</span>
+    <span class="n">Notification</span> <span class="n">Manager</span><span class="p">(</span><span class="err">通知管理器</span><span class="p">)</span><span class="err">：通过它应用程序可以在状态栏中显示自定义的提示信息</span>
+    <span class="n">Package</span> <span class="n">Manager</span><span class="err">（包管理器）</span><span class="o">:</span><span class="n">Android</span><span class="err">系统内的程序管理，可以查看</span><span class="n">Android</span><span class="err">应用程序以及</span><span class="n">Activity</span><span class="err">的相关信息</span>
+    <span class="n">Telephony</span> <span class="n">Manager</span><span class="p">(</span><span class="err">电话管理器</span><span class="p">)</span><span class="o">:</span><span class="err">管理所有的移动设备功能</span>
+    <span class="n">Resource</span> <span class="n">Manager</span><span class="err">（资源管理器）</span><span class="o">:</span><span class="err">提供应用程序使用的各种非代码资源，如本地化字符串、图片、布局文件、颜色文件，主题样式，二进制文件等</span>
+    <span class="n">Location</span> <span class="n">Manager</span><span class="p">(</span><span class="err">位置管理器</span><span class="p">)</span><span class="o">:</span><span class="err">提供位置服务</span>
+    <span class="n">XMPP</span> <span class="n">Service</span><span class="err">（</span><span class="n">XMPP</span><span class="err">服务）</span><span class="o">:</span><span class="err">提供</span><span class="n">Google</span> <span class="n">Talk</span><span class="err">服务</span>
+</pre></div>
+
+
+<h4>三、系统运行库层:</h4>
+<div class="highlight"><pre>    <span class="n">Android</span><span class="err">系统运行库层主要分为系统库和</span><span class="n">Android</span><span class="err">运行时环境两部分。</span>
+
+    <span class="err">系统库：</span>
+    <span class="err">系统库是应用程序框架的支撑，是连接应用程序框架层与</span><span class="n">Linux</span><span class="err">内核层的重要纽带。其主要包含以下几个部分：</span>
+</pre></div>
+
+
+<p>Surface Manager：执行多个应用程序时候，负责管理显示与存取操作间的互动，另外也负责2D绘图与3D绘图进行显示合成。 </p>
+<div class="highlight"><pre>    <span class="n">Media</span> <span class="n">Framework</span><span class="err">：多媒体库，支持多种常用的音频、视频格式录制和回放，编码格式包括</span><span class="n">MPEG4</span><span class="err">、</span><span class="n">MP3</span><span class="err">、</span><span class="n">H</span> <span class="mi">264</span><span class="err">、</span><span class="n">AAC</span><span class="err">、</span><span class="n">ARM</span><span class="err">。</span>
+    <span class="n">SQLite</span><span class="err">：轻量级的关系型数据库引擎</span> 
+    <span class="n">OpenGL</span><span class="o">|</span><span class="n">ES</span><span class="err">：根据</span><span class="n">OpenGL</span> <span class="n">ES</span> <span class="mf">1.0</span> <span class="n">API</span><span class="err">标准实现的</span><span class="mi">3</span><span class="n">D</span><span class="err">绘图函数库</span> 
+    <span class="n">FreeType</span><span class="err">：提供点阵字与向量字的描绘与显示</span> 
+    <span class="n">WebKit</span><span class="err">：开源的浏览器引擎，支持</span><span class="n">CSS</span><span class="err">，</span><span class="n">JAVASCRIPT</span><span class="err">，</span><span class="n">DOM</span><span class="err">等脚本语言</span>
+    <span class="n">SGL</span><span class="err">：底层的</span><span class="mi">2</span><span class="n">D</span><span class="err">图形渲染引擎</span> 
+    <span class="n">SSL</span><span class="err">：在</span><span class="n">Andorid</span><span class="err">上通信过程中实现安全认证</span>
+    <span class="n">Libc</span><span class="err">：从</span><span class="n">BSD</span><span class="err">继承来的标准</span><span class="n">C</span><span class="err">系统函数库，专门为基于</span><span class="n">embedded</span> <span class="n">linux</span><span class="err">的设备定制</span>
+
+    <span class="n">Android</span><span class="err">运行时环境（</span><span class="n">Run</span> <span class="n">Time</span> <span class="n">Context</span><span class="err">）：</span>
+    <span class="n">Android</span><span class="err">应用程序时采用</span><span class="n">Java</span><span class="err">语言编写，程序在</span><span class="n">Android</span><span class="err">运行时环境中执行，运行时环境可分为核心库和</span><span class="n">Dalvik</span><span class="err">虚拟机两部分。</span>
+
+    <span class="err">核心库提供了</span><span class="n">Java</span><span class="err">语言</span><span class="n">API</span><span class="err">中的大多数功能，同时也包含了</span><span class="n">Android</span><span class="err">的一些核心</span><span class="n">API</span><span class="err">，如</span><span class="n">android</span><span class="p">.</span><span class="n">os</span><span class="err">、</span><span class="n">android</span><span class="p">.</span><span class="n">net</span><span class="err">、</span><span class="n">android</span><span class="p">.</span><span class="n">media</span><span class="err">等等。</span>
+
+    <span class="n">Dalvik</span><span class="err">虚拟机是由</span><span class="n">Google</span><span class="err">公司自己设计专门用于</span><span class="n">Android</span><span class="err">平台的</span><span class="n">Java</span><span class="err">虚拟机，它针对移动终端做了特殊的优化。</span><span class="n">Dalvik</span><span class="err">虚拟机具有一下几个特征：</span>
+
+    <span class="mi">1</span><span class="p">)</span><span class="err">专有的</span><span class="n">DEX</span><span class="err">文件格式</span>
+    <span class="err">一个应用中可以定义很多类，编译完成后即会有很多相应的</span><span class="n">CLASS</span><span class="err">文件，</span><span class="n">CLASS</span><span class="err">文件内会有不少冗余的信息；而</span><span class="n">DEX</span><span class="err">文件格式会把所有的</span><span class="n">CLASS</span><span class="err">文件内容整合到一个文件中。这样，除了减少整体的文件尺寸，</span><span class="n">I</span><span class="o">/</span><span class="n">O</span><span class="err">操作，也提高了类的查找速度。原来每个类文件中的常量池，在</span><span class="n">DEX</span><span class="err">文件中由一个常量池来管理，而且</span><span class="n">DEX</span><span class="err">文件的结构非常紧凑。</span>
+
+    <span class="mi">2</span><span class="p">)</span><span class="err">一个应用，一个虚拟机实例，一个进程</span>
+    <span class="err">每一个</span><span class="n">Android</span><span class="err">应用都运行在一个</span><span class="n">Dalvik</span><span class="err">虚拟机实例里，而每一个虚拟机实例都是一个独立的进程空间。虚拟机的线程机制，内存分配和管理等等都是依赖底层操作系统实现的。所有</span><span class="n">Android</span><span class="err">应用的线程都对应一个</span><span class="n">Linux</span><span class="err">线程，虚拟机因而可以更多的依赖操作系统的线程调度和管理机制。不同的应用在不同的进程空间里运行，对不同来源的应用都使用不同的</span><span class="n">Linux</span><span class="err">用户来运行，可以最大程度的保护应用程序的安全和独立运行特性。</span>
+</pre></div>
+
+
+<p>在Android系统中，Zygote 是一个虚拟机进程，同时也是一个虚拟机实例的孵化器，每当系统要求执行一个 Android应用程序时，Zygote就会孵化（FORK）出一个子进程来执行该应用程序。Zygote进程是在系统启动时产生的，它会完成虚拟机的初始化，资源库的加载，预置类库的加载和初始化等操作，而在系统需要一个新的虚拟机实例时，Zygote通过复制自身，最快速的提供给系统。</p>
+<div class="highlight"><pre>    <span class="mi">3</span><span class="p">)</span> <span class="err">基于寄存器</span>
+    <span class="n">Dalvik</span><span class="err">虚拟机是基于寄存器的，相对于基于堆栈的虚拟机实现，基于寄存器的虚拟机实现虽然在硬件通用性上要差一些，但是它在代码的执行效率上却更胜一筹。在基于寄存器的虚拟机里，可以更为有效的减少冗余指令的分发和减少内存的读写访问。</span>
+</pre></div>
+
+
+<h4>四、Linux内核层</h4>
+<div class="highlight"><pre>    <span class="n">Google</span><span class="err">选择了</span><span class="n">Linux</span><span class="err">作为</span><span class="n">Android</span><span class="err">的底层支撑系统。当前的</span> <span class="n">Android</span><span class="err">系统是基于</span><span class="n">Linux2</span><span class="mf">.6</span><span class="err">内核，其核心系统服务如安全性、内存管理、进程管理、网路协议以及驱动模型都依赖于</span><span class="n">Linux</span><span class="err">内核。</span>
+</pre></div>
+
+
+<p>当然，除了标准的Linux内核外，Android还增加了内核的驱动程序：Binder(IPC)驱动、显示驱动、输入设备驱动、音频系统驱动、摄像头驱动、WiFi驱动、蓝牙驱动、电源管理。</p></div>
+		<div>
+			<h2>Comments</h2>
+		 									<div>
+	</div>	
+		<footer>
+		  <p> Powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>, theme based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
+		  <p>&copy; LuizLiu 2011</p>
+		</footer>
+	  </div>
+   
+	</div>
+</body>
+</html>
