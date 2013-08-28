@@ -61,7 +61,7 @@ tags: <a href="/tag/Android.html">Android</a> </div>
 </pre></div>
 
 
-<p><img alt="Alt text" src="http://www.51cto.com/files/uploadimg/20110529/1359590.jpg" /></p>
+<p><img alt="Alt text" src="http://t3.baidu.com/it/u=4070833964,908329486&fm=21&gp=0.jpg" /></p>
 <p>图1  Android系统架构图</p>
 <h4>一、应用程序层</h4>
 <div class="highlight"><pre>    <span class="n">Android</span><span class="err">平台不仅仅是操作系统，也包含了许多应用程序，诸如</span><span class="n">SMS</span><span class="err">短信客户端程序、电话拨号程序、图片浏览器、</span><span class="n">Web</span><span class="err">浏览器等应用程序。这些应用程序都是用</span><span class="n">Java</span><span class="err">语言编写，并且都是可以被开发人员所开发的其他应用程序替换，这点不同于其他手机操作系统固化在系统内部的系统软件，更加灵活和个性化。</span>
