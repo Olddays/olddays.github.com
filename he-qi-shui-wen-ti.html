@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>LuizLiu'sBlog</title>
+	<meta name="description" content="">
+	<meta name="author" content="LuizLiu">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+		</head>
+<body>
+			<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/index.html">LuizLiu'sBlog</a>
+			<ul class="nav">
+																										<li ><a href="/category/Android.html">Android</a></li>
+									<li class="active"><a href="/category/algorithm.html">algorithm</a></li>
+							</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">	
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+								<li><a href="http://www.google.com/">Google</a></li>
+								<li><a href="http://python.org/">Python.org</a></li>
+								<li><a href="https://developers.google.com/">GoogleDevelopers</a></li>
+								<li><a href="http://www.android.com/">Android</a></li>
+							</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+								<li><a href="https://plus.google.com/102208287383540096533/posts">Google+</a></li>
+								<li><a href="http://weibo.com/u/2812201335">微博</a></li>
+								<li><a href="https://twitter.com/lls6145219">Twitter</a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=100004010032982">Facebook</a></li>
+							</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+							<div class='article'>
+		<div class="page-header"><h1>喝汽水问题</h1></div>
+		<div class="well small">Permalink: <a class="more" href="/he-qi-shui-wen-ti.html">2013-08-09 00:00:00</a>
+by <a class="url fn" href="/author/LuizLiu.html">LuizLiu</a>in <a href="/category/algorithm.html">algorithm</a>
+tags: <a href="/tag/algorithm.html">algorithm</a> </div>
+		<div><h3>喝汽水问题</h3>
+<h5>有1000瓶汽水，喝完后每3个空瓶能换 1瓶汽水，问最后最多可以喝几瓶汽水，此时剩余几个空瓶？</h5>
+<p>不妨假设，共有 n瓶汽水，每a个空瓶能换b瓶汽水（ a &gt; b）。刚开始有n瓶汽水，喝完后就有n个空瓶，多喝的汽水是靠空瓶换来的，<em>每进行一次空瓶换汽水，就能多喝 b瓶汽水、空瓶数目就减少了 a-b个</em>（ a个空瓶换了b 瓶汽水，喝完后得到 b个空瓶）。</p>
+<p>(下面用 [x]表示x的整数部分 )</p>
+<h5>1如果允许从别处（老板或其他顾客处）借空瓶（当然，有借有还）</h5>
+<p>空瓶换汽水次数：    [n / (a - b)]
+最后剩余空瓶：      n % (a - b)
+总共可以喝到汽水： n + [n / (a - b)] * b</p>
+<h5>2不允许借空瓶</h5>
+<p>空瓶换汽水过程中，一但空瓶数小于a，则停止交换。
+ 对 n &lt; a ，显然，空瓶换汽水次数为 0，总共可以喝到汽水n瓶，最后剩余空瓶 n个
+ 对 n &gt;= a ：（下面提供三种解法）</p>
+<h5>解法一</h5>
+<p>空瓶换汽水次数 k等于满足n – (a-b)<em>t &lt; a的最小非负整数 t:
+             t &gt; (n-a)/(a-b) ，最小的t为 [(n-a)/(a-b)] + 1 = [(n-b)/(a-b)]
+             剩余的空瓶数： n – (a-b)</em>t
+= n – (a-b)<em>([(n-b)/(a-b)])
+                          = b + (n-b) - (a-b)</em>([(n-b)/(a-b)])
+= b + (n-b)%(a-b)</p>
+<h5>解法二</h5>
+<p>先预留 a个空瓶，将剩余的n-a个空瓶进行换汽水，换的过程中，若空瓶不够 a个，则从预留的a个空瓶中“借”，因而，
+空瓶换汽水次数： [(n-a)/(a-b)] + 1 = [(n-b)/(a-b)]（预留的a 个空瓶也能换一次）
+最后剩余空瓶： (n-b) % (a-b) + b（预留的a 个空瓶换得 b瓶汽水）</p>
+<h5>解法三</h5>
+<p>最后一次空瓶换汽水得到的 b瓶汽水，喝完后得到b个空瓶，因而最后剩余空瓶数必然大于 b个，先预留b 个空瓶，将剩余的 n-b个空瓶进行换汽水，若空瓶不够 a个，则从预留的b个空瓶中“借”（由于能进行空瓶换汽水，空瓶数 &gt;= a – b ，因而“借”完后，可以保证空瓶数大等于 a），
+           空瓶换汽水次数： [(n-b)/(a-b)]，
+最终剩余空瓶数： b + (n-b) % (a-b)</p>
+<p>（对解法三， n&gt;=b时结论成立，对解法一、二，可以验证 n &gt;=b时，结论也成立）</p>
+<p>因而，对n &gt;= b
+空瓶换汽水次数：    [(n-b)/(a-b)]
+最后剩余空瓶：      b + (n-b) % (a-b)
+总共可以喝到汽水： n + [(n-b)/(a-b)] * b</p>
+<p>对原题：
+ n = 1000，a = 3, b = 1 ， a – b = 2</p>
+<h5>若允许借空瓶</h5>
+<p>可以喝到汽水： 1000 + 1000 / 2 = 1500
+剩余空瓶： 1000 % 2 = 0</p>
+<h5>若不允许借空瓶</h5>
+<p>可以喝到汽水： 1000 + (1000 - 1) / 2 = 1499，
+剩余空瓶：      1 + (1000 - 1) % 2 = 2</p></div>
+		<div>
+			<h2>Comments</h2>
+		 									<div>
+	</div>	
+		<footer>
+		  <p> Powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>, theme based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
+		  <p>&copy; LuizLiu 2011</p>
+		</footer>
+	  </div>
+   
+	</div>
+</body>
+</html>
