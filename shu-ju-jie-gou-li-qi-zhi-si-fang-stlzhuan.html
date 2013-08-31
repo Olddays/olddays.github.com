@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>LuizLiu'sBlog</title>
+	<meta name="description" content="">
+	<meta name="author" content="LuizLiu">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+		</head>
+<body>
+			<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/index.html">LuizLiu'sBlog</a>
+			<ul class="nav">
+																										<li ><a href="/category/Android.html">Android</a></li>
+									<li ><a href="/category/algorithm.html">algorithm</a></li>
+									<li class="active"><a href="/category/algorithm C.html">algorithm C</a></li>
+							</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">	
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+								<li><a href="http://www.google.com/">Google</a></li>
+								<li><a href="http://python.org/">Python.org</a></li>
+								<li><a href="https://developers.google.com/">GoogleDevelopers</a></li>
+								<li><a href="http://www.android.com/">Android</a></li>
+							</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+								<li><a href="https://plus.google.com/102208287383540096533/posts">Google+</a></li>
+								<li><a href="http://weibo.com/u/2812201335">微博</a></li>
+								<li><a href="https://twitter.com/lls6145219">Twitter</a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=100004010032982">Facebook</a></li>
+							</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+							<div class='article'>
+		<div class="page-header"><h1>数据结构利器之私房STL【转】</h1></div>
+		<div class="well small">Permalink: <a class="more" href="/shu-ju-jie-gou-li-qi-zhi-si-fang-stlzhuan.html">2013-08-31 00:00:00</a>
+by <a class="url fn" href="/author/LuizLiu.html">LuizLiu</a>in <a href="/category/algorithm C.html">algorithm C</a>
+tags: <a href="/tag/algorithm C.html">algorithm C</a> </div>
+		<div><h2>数据结构利器之私房STL【转】</h2>
+<p>--by 捣乱小子</p>
+<h5>此系列的文章适合初学有意剖析STL和欲复习STL的同学们。</h5>
+<p>导语：学过c++的同学相信都有或多或少接触过STL。STL不仅仅是c++中很好的编程工具（这个词可能有点歧义，用类库更恰当），还是学习数据结构的好教材。它实现了包括可边长数组，链表，栈，队列，散列，映射等等，这些都是计算机专业同学在数据结构这门核心课程当中需要学习的。</p>
+<p>在深入一个工具之前，首先要熟练使用它。STL也一样。在剖析STL之前，可以先动手使用STL，比如其中的vector，list，stack等，热热身，而使用比剖析简单的多，何乐而不为呢。网上很多仁人志士都推荐侯杰的《C++标准程序库》，这本书好！但如果是新手，又急于了解如何使用STL，那么我更倾向于选择一般的c++书籍（里面有简单的STL使用范例）。另外，还推荐c++ reference站点：<a href="http://www.cplusplus.com/">http://www.cplusplus.com/</a>，google更不在话下。注意，如果你已经通读《C++标准程序库》，那么至多是熟练使用STL而已，但不能说精通STL。欲精通STL，必剖之。</p>
+<p>工欲善其事，必先利其器，剖析STL你需要做什么？剖析STL可能需要熟悉c++的基本的语法，了解泛型编程等。最后是侯杰的《STL源码剖析》，本篇文章以及下面给出文章的链接都是在阅读过这本书后才写下的。
+此系列的文章无意巨细分析STL内部具体实现，因为互联网上有很多大牛（@July @More Windows 待补充）的作品，STL内的一些算法和实现都已经解释的很详细了，不再班门弄斧。相反，此系列意在为STL中的每一部件作简要的总结说明，并穿插其中实现的技巧。</p>
+<ol>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1149">私房STL之vector</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/stl-list/">私房STL之list</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1170">私房STL之deque</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1187">私房STL之stack与queue</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1196">私房STL之一分钟的heap</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1218">私房STL之map和set</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1234">私房STL之Hashtable</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1247">私房STL算法之全排列</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1265">私房STL算法之快速幂</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1271">私房STL之hash_set和hash_map</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1285">私房STL之左值和右值</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1301">私房STL之函数对象</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1312">私房STL之函数配接器</a></p>
+</li>
+<li>
+<p><a href="http://daoluan.net/blog/?p=1341">私房STL之迭代器</a></p>
+</li>
+</ol>
+<p>STL是很实用的工具，用好了就宝贝，对工程有很大的帮助。</p>
+<p>ps：取名『私房STL』有点霸道，不过最后还是厚颜斗胆为此系列选用此名。</p></div>
+		<div>
+			<h2>Comments</h2>
+		 									<div>
+	</div>	
+		<footer>
+		  <p> Powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>, theme based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
+		  <p>&copy; LuizLiu 2011</p>
+		</footer>
+	  </div>
+   
+	</div>
+</body>
+</html>
