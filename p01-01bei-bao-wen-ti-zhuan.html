@@ -23,7 +23,9 @@
 		  <a class="brand" href="/index.html">LuizLiu'sBlog</a>
 			<ul class="nav">
 																										<li ><a href="/category/Android.html">Android</a></li>
+									<li ><a href="/category/Http.html">Http</a></li>
 									<li ><a href="/category/Java.html">Java</a></li>
+									<li ><a href="/category/Linux.html">Linux</a></li>
 									<li ><a href="/category/Python.html">Python</a></li>
 									<li class="active"><a href="/category/algorithm.html">algorithm</a></li>
 							</ul>
@@ -109,12 +111,17 @@ for i=1..N
 <h2>一个常数优化</h2>
 <p>前面的伪代码中有 for v=V..1，可以将这个循环的下限进行改进。</p>
 <p>由于只需要最后f[v]的值，倒推前一个物品，其实只要知道f[v-w[n]]即可。以此类推，对以第j个背包，其实只需要知道到f[v-sum{w[j..n]}]即可，即代码中的</p>
-<p>for i=1..N
+<pre>
+for i=1..N
     for v=V..0
-可以改成</p>
-<p>for i=1..n
+</pre>
+
+<p>可以改成
+<pre>
+for i=1..n
     bound=max{V-sum{w[i..n]},c[i]}
     for v=V..bound
+</pre>
 这对于V比较大时是有用的。</p>
 <h2>小结</h2>
 <p>01背包问题是最基本的背包问题，它包含了背包问题中设计状态、方程的最基本思想，另外，别的类型的背包问题往往也可以转换成01背包问题求解。故一定要仔细体会上面基本思路的得出方法，状态转移方程的意义，以及最后怎样优化的空间复杂度。</p></div>
