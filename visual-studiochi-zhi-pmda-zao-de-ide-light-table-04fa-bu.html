@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>LuizLiu'sBlog</title>
+	<meta name="description" content="">
+	<meta name="author" content="LuizLiu">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="/theme/html5.js"></script>
+	<![endif]-->
+
+	<!-- Le styles -->
+	<link href="/theme/bootstrap.min.css" rel="stylesheet">
+	<link href="/theme/local.css" rel="stylesheet">
+	<link href="/theme/pygments.css" rel="stylesheet">
+		</head>
+<body>
+			<div class="topbar">
+	  <div class="topbar-inner">
+		<div class="container-fluid">
+		  <a class="brand" href="/index.html">LuizLiu'sBlog</a>
+			<ul class="nav">
+																										<li ><a href="/category/Android.html">Android</a></li>
+									<li ><a href="/category/Http.html">Http</a></li>
+									<li ><a href="/category/Idea.html">Idea</a></li>
+									<li ><a href="/category/Java.html">Java</a></li>
+									<li ><a href="/category/Linux.html">Linux</a></li>
+									<li class="active"><a href="/category/Python.html">Python</a></li>
+									<li ><a href="/category/algorithm.html">algorithm</a></li>
+							</ul>
+			<p class="pull-right"><a href="/archives.html">[archives]</a> <a href="/tags.html">[tags]</a></p>
+		</div>
+	  </div>
+	</div>
+
+	<div class="container-fluid">	
+	  <div class="sidebar">
+		<div class="well">
+			<h3>Blogroll</h3>
+			<ul>
+								<li><a href="http://www.google.com/">Google</a></li>
+								<li><a href="http://python.org/">Python.org</a></li>
+								<li><a href="https://developers.google.com/">GoogleDevelopers</a></li>
+								<li><a href="http://www.android.com/">Android</a></li>
+								<li><a href="http://blog.csdn.net/v_JULY_v">CSDN结构之法 算法之道</a></li>
+								<li><a href="http://www.codeproject.com/">CodeProject</a></li>
+								<li><a href="http://www.cnblogs.com/leoo2sk/">CodingLabs</a></li>
+								<li><a href="http://www.geekpark.net/">极客公园</a></li>
+								<li><a href="http://www.oschina.net/">开源中国</a></li>
+								<li><a href="http://www.oschina.net/project/">开源中国开源项目</a></li>
+							</ul>
+			<div class="social">
+			<h3>Social</h3>
+			<ul>
+								<li><a href="https://plus.google.com/102208287383540096533/posts">Google+</a></li>
+								<li><a href="http://weibo.com/u/2812201335">微博</a></li>
+								<li><a href="https://twitter.com/lls6145219">Twitter</a></li>
+								<li><a href="https://www.facebook.com/profile.php?id=100004010032982">Facebook</a></li>
+								<li><a href="https://github.com/Olddays">Github</a></li>
+								<li><a href="">lls6145219@Gmail.com</a></li>
+							</ul>
+			</div>
+		</div>
+	  </div>
+	  <div class="content">
+							<div class='article'>
+		<div class="page-header"><h1>Visual Studio离职PM打造的IDE——Light Table 0.4发布</h1></div>
+		<div class="well small">Permalink: <a class="more" href="/visual-studiochi-zhi-pmda-zao-de-ide-light-table-04fa-bu.html">2013-08-09 10:12:00</a>
+by <a class="url fn" href="/author/LuizLiu.html">LuizLiu</a>in <a href="/category/Python.html">Python</a>
+tags: <a href="/tag/Python.html">Python</a> </div>
+		<div><p>近日，Chris Granger在博客上发布了Light Table 0.4版，包含了众多重要更新。该版本的主要目的在于增加支持eval的语言、优化核心功能体验，以及扩大软件受众。Light Table 0.3已经支持动态修改网站，0.4版本更是提供了向NodeJS应用注入代码，以及内联展示matplotlib图表的功能。下面是详细介绍：（文中图片都可以点击放大）</p>
+<h4>一、深度JavaScript集成</h4>
+<p>在LightTable 0.4中，你可以将浏览器嵌入其标签页中，打开页面并开始修改，即使这个网页并不属于你，也不需要任何配置。</p>
+<p>得益于Chrome-DevTools的集成，0.4版本中新增了很多令人印象深刻的新功能——比如内联地或者通过控制台检查JavaScript对象。（演示视频）</p>
+<p>但其最让人激动地变化并不在此，新版本中eval功能的加强首屈一指：不是简单地调用eval()，而是深入正在运行的VM，也就是说运行时“不可能”修改的东西将可以简单地通过Cmd+Enter更新。这还神奇地修补了时间处理器、匿名函数以及很多其它问题。虽然它依然不够完美，但至少你不再需要那么多刷新了。</p>
+<p>当然，既然支持JavaScript，Node.JS的支持也是理所当然。</p>
+<h4>二、会说话的蛇：支持Python</h4>
+<p>Light Table现在支持Python eval，它同时支持Python 2和3，但是对IPython的支持更加尽善尽美。（演示视频）</p>
+<p>完全支持Python内联结果/异常（inline results/exceptions）以及控制台集成。</p>
+<p>通过和IPython集成，Light Table中还提供inline  matplotlib/pylab图表功能。</p>
+<h4>三、文档</h4>
+<p>在该版本之前项目仍然很不稳定，但是现在主要流程已经契合得不错。你可以通过欢迎界面或者使用 “Docs: Open Light Table's documentation” 命令来查看这些文档。</p>
+<h4>四、其它变更</h4>
+<p>该版本带来了很多其它更新——详情可以查看changlog：</p>
+<p>支持多窗口；
+支持多标签集；
+工作空间的树形视图支持文件系统跟踪支持标准文件操作；
+可以通过connect tab显式地建立连接；
+控制台的功能得到了极大的改进；
+基于令牌的内部文件（Intra-file token-based）自动补全！
+极大的性能改进（渲染能力提升了4-10倍）。</p>
+<h4>五、面向新手</h4>
+<p>Light Table致力于打造一个易于上手，但同样适合工作的强大的编程环境，在这个版本中Light Table提供了很多面向初学者的新功能，比如大幅缩短了反馈回路（feedback loop）、简化了工作流，等等。</p>
+<p>如果你来自教育机构，欢迎从学生的角度提出改进的建议。（联系方式： learn[at]kodowa.com）</p>
+<h4>六、愿景</h4>
+<p>目前Light Table已经支持3门编程语言（Clojure、JavaScript和Python），在接下来的0.5版本中将侧重于0.4版本中未深入的一些功能，此外还会继续提供更深入的语言支持。之后面向Kickstarter客户的内侧beta版的主要目标在于开放插件接口——目前所知最让人激动地功能！</p>
+<h4>题外话：关于作者</h4>
+<p>Light Table作者Chris Grange是个很有意思的人，根据博客上的介绍他曾有这些经历：</p>
+<p>Chris Granger于2005年-2008年，就读于北卡罗莱纳大学教堂山分校，他本打算争取该校德语、英语双学位，结果读遍了从考古学到高级遗传学、从诗歌再到计算机科学的几乎所有领域的课程，最终决定提前一年带着德语文学士（B.A.）以及优等成绩毕业。在这段时间里，他接受了很多公司Web开发承包工作，获得多家IT公司（或者传统公司IT部门）的实习工作，其中包括newbalance.com、puma.com以及diderot.com等知名企业，但是从MODE Visual开始，他接触并迷上了Web开发。</p>
+<p>在毕业之后，他陆续接触了PHP、Python、Ruby等编程语言，但是在加入微软（2009-2010）之后，他开始投入于C#以及Visual Studio，此时他的身份是Program Manager。在这一过程中，他开始接触更多让他感兴趣的事物——设计、公开演讲、创新以及和客户打交道。这段时期，最令他自豪的是，他的一次演示吸引了超过4万名听众——他们来自微软以及其合作伙伴（比如Intel、Nvidia等等）。</p>
+<p>虽然他对开发工具很感兴趣，这也正是他加入Visual Studio团队以及开发Light Table的主要原因，但是Web的诱惑力更大。最终他在2010年离开微软，并与朋友创办了属于自己的公司。</p>
+<p>虽然他有PHP、Python、Ruby、VB、C#等众多语言的编程经验，但他最中意的还是Clojure这一Lisp方言，你可以看到Clojure正是Light Table第一个支持的编程语言，甚至最初版本的Light Table也是由Clojure所编写。</p>
+<p>大家想在0.5版本中看到什么新功能，可以去Google Groups上提建议。</p></div>
+		<div>
+			<h2>Comments</h2>
+		 									<div>
+	</div>	
+		<footer>
+		  <p> Powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>, theme based on <a href="http://twitter.github.com/bootstrap/">Bootstrap, from Twitter</a>.</p>
+		  <p>&copy; LuizLiu 2011</p>
+		</footer>
+	  </div>
+   
+	</div>
+</body>
+</html>
